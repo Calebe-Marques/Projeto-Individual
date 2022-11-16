@@ -5,14 +5,15 @@
     box-sizing: border-box;
 }
 :root{
-    --corHeader :rgb(103, 187, 77);
-    --corBottomHeader :rgb(232, 60, 154);
+    --corHeader :#95cd12;
+    --corBottomHeader :#F55A86;
     --corHover :rgb(5, 58, 99);
     --corBranca :#FFF;
 }
 
 body {
     font-family: "Manrope", sans-serif;
+    background-color: black;
 }
 
 header{
@@ -20,7 +21,6 @@ header{
     z-index: 999;
     background-color: var(--corHeader);
     border-bottom: 5px solid var(--corBottomHeader);
-    position: fixed;
 }
 
 .container{

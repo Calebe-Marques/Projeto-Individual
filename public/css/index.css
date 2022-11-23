@@ -2,67 +2,188 @@
 
 @font-face {
     font-family: 'titulo';
-    src: url(../fonts/DOCALLISME\ ON\ STREET.ttf) format('truetype');
+    src: url(../assents/fonts/DOCALLISME\ ON\ STREET.ttf) format('truetype');
 }
 
 @font-face {
-    font-family: 'recado';
-    src: url(../fonts/DrawingBlood.ttf) format('truetype');
+    font-family: 'subtitulo';
+    src: url(../assents/fonts/Ghoust\ Outline.otf) format('opentype');
 }
 
-:root {
-    --degrade: linear-gradient(to left,
-            #ADCD12,
-            #C3CC6F,
-            #F55A86);
 
+
+:root {
     --degradeBrasil: linear-gradient(to left,
-            #FFF100,
             #002369,
             #00832D);
 
-    --corTexto: rgb(250, 247, 219);
+    --corTitulos: #002369;
+    --corSubtitulos: #7d0000;
+    --backgroundContainer: #ADCD12;
+    --corTexto: rgb(0, 0, 0);
 }
 
+/* Inicio da pag.inicial */
 .container-main {
-    height: 80vh;
     width: 100%;
+    height: 100vh;
     display: flex;
+    
 }
 
-.imagem-will {
+/* Carrossel não interativo */
+.carrosel {
+    -webkit-perspective: 180px;
+    -moz-perspective: 180px;
+    width: 400px;
+    height: 200px;
+    margin: 0 auto;
+    margin-top: 65vh;
+    margin-left: 67vw;
     position: absolute;
-    width: 48%;
-    margin-top: 3vh;
-    margin-left: 1vw;
 }
 
-.imagem-chris {
+@-webkit-keyframes efeitoCarrosel {
+    from {
+        -webkit-transform: rotateY(360deg) translateZ(130px) rotateY(-360deg);
+        -moz-transform: rotateY(360deg) translateZ(130px) rotateY(-360deg);
+        z-index: 10;
+        opacity: 1
+    }
+
+    50% {
+        z-index: -10;
+    }
+
+    to {
+        -webkit-transform: rotateY(0deg) translateZ(130px) rotateY(0deg);
+        -moz-transform: rotateY(0deg) translateZ(130px) rotateY(0deg);
+        z-index: 10;
+        opacity: 1
+    }
+}
+
+@-moz-keyframes efeitoCarrosel {
+    from {
+        -moz-transform: rotateY(360deg) translateZ(130px) rotateY(-360deg);
+        z-index: 10;
+        opacity: 1
+    }
+
+    50% {
+        z-index: -10;
+    }
+
+    to {
+        -moz-transform: rotateY(0deg) translateZ(130px) rotateY(0deg);
+        z-index: 10;
+        opacity: 1
+    }
+}
+
+.caixa__card {
+    width: 90px;
+    height: 100px;
+    background-color: #442222;
     position: absolute;
-    margin-top: 5vh;
-    margin-left: 37vw;
-    width: 48%;
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    top: 35px;
+    left: 125px;
+    font-size: 9px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, .5);
+    text-align: center;
+    -webkit-animation-name: efeitoCarrosel;
+    -moz-animation-name: efeitoCarrosel;
+    -webkit-animation-duration: 32s;
+    -moz-animation-duration: 32s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+}
+
+.estilizacao-img {
+    width: 90px;
+    height: 100px;
+    border-radius: 8px;
+}
+
+.caixa__card:hover {
+    border: solid #4466cc 3px;
+    box-shadow: 0px 0px 10px #4466cc;
+}
+
+.caixa__card.img1 {
+    -webkit-animation-delay: -28s;
+    -moz-animation-delay: -28s;
+}
+
+.caixa__card.img2 {
+    -webkit-animation-delay: -24s;
+    -moz-animation-delay: -24s;
+}
+
+.caixa__card.img3 {
+    -webkit-animation-delay: -20s;
+    -moz-animation-delay: -20s;
+}
+
+.caixa__card.img4 {
+    -webkit-animation-delay: -16s;
+    -moz-animation-delay: -16s;
+}
+
+.caixa__card.img5 {
+    -webkit-animation-delay: -12s;
+    -moz-animation-delay: -12s;
+}
+
+.caixa__card.img6 {
+    -webkit-animation-delay: -8s;
+    -moz-animation-delay: -8s;
+}
+
+.caixa__card.img7 {
+    -webkit-animation-delay: -4s;
+    -moz-animation-delay: -4s;
+}
+
+
+
+/* Texto de introdução */
+.container-introducao {
+    display: flex;
+    width: 50vw;
+    height: 100vh;
+    margin-top: 18vh;
+    margin-left: 3vw;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--backgroundContainer);
+    border: 3px solid #F55A86;
+    border-radius: 20px 5px 20px 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .introducao {
     display: flex;
-    width: 60%;
-    height: 100%;
-    margin-left: 22vw;
-    margin-top: 2vh;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    margin-left: 5vw;
+    margin-bottom: 3vh;
 }
 
 .titulo-introducao {
     display: flex;
     font-family: titulo;
-    font-size: 2.3rem;
+    font-size: 2.5rem;
     flex-direction: column;
-    margin-top: 8vh;
+    margin-left: 4vw;
     padding: 10px;
-    background-image: var(--degrade);
+    background-color: var(--corTitulos);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent
@@ -71,31 +192,31 @@
 .introducao p {
     display: flex;
     margin-top: 5vh;
-    width: 65%;
+    width: 85%;
     color: var(--corTexto);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/* 2° section */
+/* 2° section - parte que fala sobre o Brasil  */
 
 .container-brasil {
-    height: 80vh;
-    width: 100%;
     display: flex;
-    margin-top: 100vh;
+    width: 100%;
 }
 
 .resumo-brasil {
     display: flex;
-    width: 60%;
-    height: 100%;
-    margin-left: 6vw;
-    margin-top: 12vh;
+    width: 82%;
+    margin-top: 36vh;
+    margin-left: 3vw;
     margin-bottom: 3vh;
     justify-content: space-between;
     align-items: flex-start;
     flex-direction: column;
-    border-radius: 10px ;
+    background-color: var(--backgroundContainer);
+    border: 3px solid #F55A86;
+    border-radius: 20px 5px 20px 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .titulo-resumo {
@@ -104,7 +225,7 @@
     font-size: 2.8rem;
     flex-direction: column;
     margin-top: 5vh;
-    margin-left: 2vw;
+    margin-left: 4vw;
     padding: 10px;
     background-image: var(--degradeBrasil);
     background-clip: text;
@@ -113,8 +234,168 @@
 }
 
 .resumo-brasil p {
+    width: 95%;
     color: var(--corTexto);
     margin-top: 3vh;
+    margin-left: 1.8vw;
     margin-bottom: 6vh;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* 3° Section - temas abordados pelas séries */
+
+.final-index {
+    display: flex;
+    width: 100%;
+    height: 353vh;
+}
+
+.temas-series {
+    display: flex;
+    width: 85%;
+    height: 90%;
+    margin-top: 16vh;
+    margin-left: 2.5vw;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--backgroundContainer);
+    border: 3px solid #F55A86;
+    border-radius: 20px 5px 20px 5px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+/* Introdução para os temas */
+
+.titulo-final {
+    display: flex;
+    flex-direction: column;
+    font-family: titulo;
+    font-size: 3.5rem;
+    word-spacing: 1px;
+    margin-top: 15vh;
+    padding: 10px;
+    background-color: var(--corTitulos);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent
+}
+
+.txt1 {
+    display: flex;
+    width: 70%;
+    margin-top: 5vh;
+    font-size: 1.1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 800;
+}
+
+h2 {
+    font-family: subtitulo;
+    padding: 10px;
+    font-size: 2.5rem;
+    background-color: var(--corSubtitulos);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent
+}
+
+.subtitulo {
+    display: flex;
+}
+
+.final {
+    display: flex;
+    width: 60%;
+}
+
+/* Parte - Desigualdade Social */
+.ds {
+    margin-right: 95vh;
+    margin-top: 15vh;
+}
+
+.txt2 {
+    margin-top: 3vh;
+    margin-right: 27vw;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 200;
+}
+
+.topicos-img1 {
+    position: absolute;
+    width: 52%;
+    margin-top: 34vh;
+    margin-left: 26vw;
+    border-radius: 5px;
+}
+
+/* Parte - Violencia policial */
+
+.vp {
+    margin-top: 15vh;
+    margin-left: 15vw;
+}
+
+.txt3 {
+    margin-top: 2vh;
+    margin-left: 20vw;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 200;
+}
+
+.topicos-img2 {
+    position: absolute;
+    width: 40%;
+    margin-top: 60vh;
+    margin-right: 30vw;
+    border-radius: 5px;
+}
+
+/* Parte - Racismo */
+
+.racismo {
+    margin-top: 10vh;
+    margin-left: 17vw;
+
+}
+
+.txt4 {
+    margin-top: 2.5vh;
+    margin-left: 20.5vw;
+}
+
+.topicos-img3 {
+    position: absolute;
+    width: 42%;
+    margin-top: 92vh;
+    margin-right: 29vw;
+    border-radius: 5px;
+}
+
+/* Parte - Bullying */
+
+.bullying{
+    margin-top: 15vh;
+    margin-right: 43vw;
+}
+
+.txt5{
+    margin-top: 2.5vh;
+    margin-right: 27vw;
+}
+
+.topicos-img4{
+    position: absolute;
+    width: 42%;
+    margin-top: 124vh;
+    margin-left: 25vw;
+    border-radius: 5px;
+}
+
+.topicos-img5{
+    position: absolute;
+    width: 42%;
+    margin-top: 140vh;
+    margin-left: 25.1vw;
+    border-radius: 5px;
 }

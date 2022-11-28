@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'grafite';
+    src: url(../assents/fonts/Brakes.ttf) format('truetype');
+}
+
+:root {
+    --verdeClaro: #ADCD12;
+    --azul: rgb(9, 88, 148);
+    --amarelo: #F2EC94;
+    --rosa: #F55A86;
+}
+
+body {
+    background-color: black;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 53%;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12ch;
+    border: 2px solid white;
+    border-radius: 15px;
+    background-color: black;
+}
+
+.box-right{
+    display: flex;
+    width: 43%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-left{
+    width: 57%;
+    height: 100%;
+    border-radius: 16px 0px 0px 16px;
+}
+
+.img-right{
+    height: 100%;
+    border-radius: 35px 16px 16px 35px;
+}
+
+
+h2 {
+    position: absolute;
+    margin-bottom: 60vh;
+    margin-left: 6vw;
+    width: 29vw;
+    font-size: 1.8rem;
+    padding: 5px;
+    font-family: grafite;
+    color: white;
+}
+
+.espacamento {
+    margin-left: 5vw;
+}
+
+.formulario {
+    display: flex;
+    width: 100%;
+    height: 70vh;
+    margin-top: 10vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Poppins";
+}
+
+.campo-formulario {
+    position: relative;
+    margin-top: 5vh;
+}
+
+.campo-formulario input {
+    outline: none;
+    font-size: 1.15rem;
+    color: white;
+    border: 0;
+    background: transparent;
+}
+
+.campo-formulario input::placeholder {
+    color: white;
+}
+
+.campo-formulario .underline::before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    background: rgba(162, 162, 162, 0.2);
+}
+
+.campo-formulario .underline::after {
+    content: '';
+    position: absolute;
+    height: 1.5px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    background: white;
+    transform: scaleX(0);
+    transition: all .7s ease-in-out;
+    transform-origin: left;
+}
+
+.campo-formulario input:focus~.underline::after {
+    transform: scaleX(1);
+}
+
+.btn{
+    margin-top: 7vh;
+    width: 7vw;
+    padding: 5px;
+    font-size: 1rem;
+}
+
+.btn:hover{
+    color: white;
+    background-color: black;
+    border: 1.5px solid white;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+
+.atalho{
+    margin-top: 2vh;
+    color: rgb(255, 255, 255);
+}

@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+@font-face {
+    font-family: 'grafite';
+    src: url(../assents/fonts/DOCALLISME\ ON\ STREET.ttf) format('truetype');
+}
+
+body{
+    background-color: black;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    width: 65%;
+    height: 80vh;
+    align-items: center;
+    margin-top: 12ch;
+    border: 2px solid white;
+    border-radius: 15px;
+    background-color: black;
+}
+
+.box-left{
+    display: flex;
+    width: 34%;
+    height: 80vh;
+    border-radius: 25px;
+}
+
+.img-left{
+    display: flex;
+    width: 28vw;
+    height: 79.7vh;
+    margin-top: 1px;
+    border-radius: 16px 35px 35px 16px;
+}
+
+.box-right{
+    display: flex;
+    width: 45%;
+    height: 75vh;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
+    margin-left: 10vw;
+}
+
+.formulario{
+    display: flex;
+    width: 100%;
+    height: 70vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Poppins";
+}
+
+.titulo-login{
+    color: white;
+    letter-spacing: 2px;
+    font-size: 2.1rem;
+    padding: 5px;
+    font-family: grafite;
+}
+
+.espacamento{
+    margin-left: 2.5vw;
+}
+
+.campo-formulario{
+    position: relative;
+    margin-top: 9vh;
+    width: 90%;
+}
+
+.campo-formulario input {
+    outline: none;
+    font-size: 1.15rem;
+    color: white;
+    border: 0;
+    background: transparent;
+}
+
+.campo-formulario input::placeholder {
+    color: white;
+}
+
+.campo-formulario .underline::before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    background: rgba(255, 255, 255, 0.23);
+}
+
+.campo-formulario .underline::after {
+    content: '';
+    position: absolute;
+    height: 1.5px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    background: rgb(255, 255, 255);
+    transform: scaleX(0);
+    transition: all .7s ease-in-out;
+    transform-origin: left;
+}
+
+.campo-formulario input:focus~.underline::after {
+    transform: scaleX(1);
+}
+
+.btn{
+    margin-top: 7vh;
+    width: 7vw;
+    padding: 5px;
+    font-size: 1rem;
+}
+
+.btn:hover{
+    color: white;
+    background-color: black;
+    border: 1.5px solid white;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+
+.atalho{
+    margin-top: 2vh;
+    color: rgb(255, 255, 255);
+}

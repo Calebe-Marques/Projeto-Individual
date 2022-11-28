@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: var(--verdeClaro);
+    background-color:var(--verdeClaro);
 }
 
 @font-face {
@@ -26,9 +26,8 @@ body {
     --rosa: #F55A86;
 }
 
-
 /* Estilização da section que "complementará" o header */
-.section-header {
+.section-header{
     display: flex;
     width: 100%;
     height: 50vh;
@@ -36,15 +35,15 @@ body {
     box-shadow: 6px 6px 6px #555;
 }
 
-.img-will {
+.img-chris{
     display: flex;
     margin-top: 3vh;
-    margin-left: 10vw;
-    width: 60%;
+    margin-left: 12vw;
+    width: 61%;
 }
 
-/* Section 2 = informações sobre Will */
-.container-will {
+/* Section 2 = informações sobre Chris */
+.container-chris {
     display: flex;
     width: 100%;
     height: 80vh;
@@ -84,11 +83,12 @@ body {
     transform: rotate(45deg);
 }
 
-.img-will-c1 {
+.img-chris-c1 {
     display: flex;
     position: absolute;
     margin-top: 3.4vh;
-    width: 45%;
+    width: 39%;
+    margin-left: 1vw;
 }
 
 .box-rigth {
@@ -151,7 +151,7 @@ body {
 .parte-serie{
     display: flex;
     width: 98%;
-    height: 128vh;
+    height: 132vh;
     justify-content: center;
     margin-top: 2vh;
     margin-left: 1vw;
@@ -172,7 +172,7 @@ body {
     display: flex;
     position: absolute;
     width: 45%;
-    height: 92vh;
+    height: 98vh;
     margin-right: 48vw;
     margin-top: 28vh;
     justify-content: center;
@@ -201,7 +201,7 @@ body {
     display: flex;
     position: absolute;
     width: 45%;
-    height: 92vh;
+    height: 98vh;
     margin-left: 48vw;
     margin-top: 28vh;
     justify-content: center;
@@ -255,7 +255,7 @@ body {
     align-items: center;
     flex-direction: column;
     border-radius: 20px;
-    background-image: url(".././assents/pag-will/fundo-carrossel.webp");
+    background-image: url(".././assents/pag-chris/fundo-carrossel.jpg");
 }
 
 .container-carrossel{
@@ -351,13 +351,3 @@ body {
     transform: translateX(2px) translateY(2px);
     box-shadow: var(--rosa) 4px 6px 0px;
 }
-
-
-
-
-
-
-
-
-
-

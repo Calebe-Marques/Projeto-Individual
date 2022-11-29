@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/cadastro.css">
-    <title>SWRC | Cadastro</title>
+    <link rel="stylesheet" href="css/login.css">
+    <title>SWRC | Login</title>
 </head>
-
 <body>
     <header>
         <nav class="nav-header">
@@ -30,54 +28,102 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="conheça-will.html">Conheça o Will</a></li>
-                <li><a href="#">Conhenheça o Chris</a></li>
-                <li><a href="login.html">Login</a></li>
+                <li><a href="conheça-chris.html">Conheça o Chris</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <div class="container">
-            <div class="box-right">
-                    <img class="img-right" src="./assents/img-tela-login-cadastro/chris-will-cadastro.jpg">
-            </div>
             <div class="box-left">
-
-            
-        
-            <div class="formulario">
-                <h2> <span class="espacamento">BEM VINDO</span> <br> USER QUE MORA LOGO ALI !</h2>
-
-                <div class="campo-formulario">
-                    <input id="input_nome" type="text" placeholder="Seu nome">
-                    <div class="underline"></div>
+                <div class="img-left">
+                    <img class="img-left" src="./assents/img-tela-login-cadastro/login-left.jpg">
                 </div>
-
-                <div class="campo-formulario">
-                    <input id="input_email" type="text" placeholder="seuemail@gmail.com">
-                    <div class="underline"></div>
-                </div>
-
-                <div class="campo-formulario">
-                    <input id="input_senha" type="password" placeholder="Senha: ******">
-                <div class="underline"></div>
-                </div>
-
-                <div class="campo-formulario">
-                    <input id="input_confirmacao_senha" type="password" placeholder="Confirmar Senha: ******">
-                    <div class="underline"></div>
-                </div>
-
-                <button class="btn" onclick="cadastrar()">Cadastrar</button>
-
-                <p class="atalho">Caso ja tenha uma conta <a href="login.html"><b>clique aqui</b></a></p>
-
             </div>
-        </div>
+            <div class="box-right">
+                <div class="formulario">
+                    <h2 class="titulo-login">Eaii user que mora logo ali<br><span class="espacamento"></span>Bem vindo de volta!!!</span></h2>
+    
+    
+                    <div class="campo-formulario">
+                        <input id="input_email" type="text" placeholder="seuemail@gmail.com">
+                        <div class="underline"></div>
+                    </div>
+    
+                    <div class="campo-formulario">
+                        <input id="input_senha" type="password" placeholder="Senha: ******">
+                    <div class="underline"></div>
+                    </div>
+    
+                    <button class="btn" onclick="entrar()">ENTRAR</button>
+
+            <p class="atalho">Caso não tenha uma conta <a href="cadastro.html"><b>clique aqui</b></a></p>
+            </div>
         </div>
     </main>
-</body>
 
+</body>
 </html>
-<script src="./js/header.js"></script>
-<script src="./js/validacao.js"></script>
+
+<script>
+    function entrar() {
+
+        var emailVar = input_email.value;
+        var senhaVar = input_senha.value;
+
+        if (emailVar == "" || senhaVar == "") {
+           alert("Erro, campo em branco")
+            return false;
+        }
+       
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "ranking.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+</script>
